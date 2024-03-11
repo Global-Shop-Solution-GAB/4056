@@ -1,0 +1,499 @@
+Program.Sub.ScreenSU.Start
+gui.Form1..create
+gui.Form1..caption("Employee Occurrences")
+gui.Form1..size(7530,2775)
+gui.Form1..minx(0)
+gui.Form1..miny(0)
+gui.Form1..position(0,0)
+gui.Form1..event(unload,form1_unload)
+gui.Form1..alwaysontop(False)
+gui.Form1..fontname("Arial")
+gui.Form1..fontsize(8)
+gui.Form1..forecolor(0)
+gui.Form1..fontstyle(,,,,)
+gui.Form1..BackColor(-2147483633)
+gui.Form1..controlbox(True)
+gui.Form1..maxbutton(False)
+gui.Form1..minbutton(True)
+gui.Form1..mousepointer(0)
+gui.Form1..moveable(True)
+gui.Form1..sizeable(False)
+gui.Form1..ShowInTaskBar(True)
+gui.Form1..titlebar(True)
+gui.Form1.txtEmp.create(textbox,"",True,1215,300,0,300,400,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtEmp.event(lostfocus,txtemp_lostfocus)
+gui.Form1.txtEmp.defaultvalue("")
+gui.Form1.txtEmp.controlgroup(0)
+gui.Form1.lbl1.create(label,"Employee",True,1935,255,1,300,200,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl1.defaultvalue("")
+gui.Form1.lbl1.controlgroup(0)
+gui.Form1.cmdBrwsEmp.create(button)
+gui.Form1.cmdBrwsEmp.caption("^")
+gui.Form1.cmdBrwsEmp.visible(True)
+gui.Form1.cmdBrwsEmp.size(495,330)
+gui.Form1.cmdBrwsEmp.zorder(0)
+gui.Form1.cmdBrwsEmp.position(4300,390)
+gui.Form1.cmdBrwsEmp.enabled(True)
+gui.Form1.cmdBrwsEmp.fontname("Arial")
+gui.Form1.cmdBrwsEmp.fontsize(8)
+gui.Form1.cmdBrwsEmp.event(click,cmdbrwsemp_click)
+gui.Form1.cmdBrwsEmp.defaultvalue("")
+gui.Form1.cmdBrwsEmp.controlgroup(0)
+gui.Form1.txtEmpName.create(textbox,"",True,2460,300,0,1800,400,False,0,Arial,8,-2147483643,1)
+gui.Form1.txtEmpName.defaultvalue("")
+gui.Form1.txtEmpName.controlgroup(0)
+gui.Form1.lbl2.create(label,"Name",True,1935,255,1,1800,200,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl2.defaultvalue("")
+gui.Form1.lbl2.controlgroup(0)
+gui.Form1.ddlOccID.create(dropdownlist)
+gui.Form1.ddlOccID.visible(True)
+gui.Form1.ddlOccID.size(1140,330)
+gui.Form1.ddlOccID.zorder(0)
+gui.Form1.ddlOccID.position(300,1000)
+gui.Form1.ddlOccID.enabled(True)
+gui.Form1.ddlOccID.fontname("Arial")
+gui.Form1.ddlOccID.fontsize(8)
+gui.Form1.ddlOccID.event(lostfocus,ddloccid_lostfocus)
+gui.Form1.ddlOccID.defaultvalue("")
+gui.Form1.ddlOccID.controlgroup(0)
+gui.Form1.lbl3.create(label,"Occ ID",True,1935,255,1,300,800,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl3.defaultvalue("")
+gui.Form1.lbl3.controlgroup(0)
+gui.Form1.ddlDesc.create(dropdownlist)
+gui.Form1.ddlDesc.visible(True)
+gui.Form1.ddlDesc.size(2115,330)
+gui.Form1.ddlDesc.zorder(0)
+gui.Form1.ddlDesc.position(1600,1000)
+gui.Form1.ddlDesc.enabled(True)
+gui.Form1.ddlDesc.fontname("Arial")
+gui.Form1.ddlDesc.fontsize(8)
+gui.Form1.ddlDesc.defaultvalue("")
+gui.Form1.ddlDesc.controlgroup(0)
+gui.Form1.lbl4.create(label,"Description",True,1935,255,1,1600,800,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl4.defaultvalue("")
+gui.Form1.lbl4.controlgroup(0)
+gui.Form1.ddlPts.create(dropdownlist)
+gui.Form1.ddlPts.visible(True)
+gui.Form1.ddlPts.size(1065,330)
+gui.Form1.ddlPts.zorder(0)
+gui.Form1.ddlPts.position(3800,1000)
+gui.Form1.ddlPts.enabled(True)
+gui.Form1.ddlPts.fontname("Arial")
+gui.Form1.ddlPts.fontsize(8)
+gui.Form1.ddlPts.defaultvalue("")
+gui.Form1.ddlPts.controlgroup(0)
+gui.Form1.lbl5.create(label,"Pts",True,1020,255,1,3800,800,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl5.defaultvalue("")
+gui.Form1.lbl5.controlgroup(0)
+gui.Form1.ddlDateOcc.create(datepicker)
+gui.Form1.ddlDateOcc.visible(True)
+gui.Form1.ddlDateOcc.size(1935,330)
+gui.Form1.ddlDateOcc.zorder(0)
+gui.Form1.ddlDateOcc.position(5000,1000)
+gui.Form1.ddlDateOcc.enabled(True)
+gui.Form1.ddlDateOcc.checkbox(False)
+gui.Form1.ddlDateOcc.defaultvalue("")
+gui.Form1.ddlDateOcc.controlgroup(0)
+gui.Form1.lbl6.create(label,"Date of Occurrence",True,1935,255,1,5000,800,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl6.defaultvalue("")
+gui.Form1.lbl6.controlgroup(0)
+gui.Form1.cmdSave.create(button)
+gui.Form1.cmdSave.caption("Save")
+gui.Form1.cmdSave.visible(True)
+gui.Form1.cmdSave.size(915,375)
+gui.Form1.cmdSave.zorder(0)
+gui.Form1.cmdSave.position(340,1500)
+gui.Form1.cmdSave.enabled(True)
+gui.Form1.cmdSave.fontname("Arial")
+gui.Form1.cmdSave.fontsize(8)
+gui.Form1.cmdSave.event(click,cmdsave_click)
+gui.Form1.cmdSave.defaultvalue("")
+gui.Form1.cmdSave.controlgroup(0)
+gui.Form1.cmdDelete.create(button)
+gui.Form1.cmdDelete.caption("Delete")
+gui.Form1.cmdDelete.visible(True)
+gui.Form1.cmdDelete.size(915,375)
+gui.Form1.cmdDelete.zorder(0)
+gui.Form1.cmdDelete.position(1400,1500)
+gui.Form1.cmdDelete.enabled(True)
+gui.Form1.cmdDelete.fontname("Arial")
+gui.Form1.cmdDelete.fontsize(8)
+gui.Form1.cmdDelete.event(click,cmddelete_click)
+gui.Form1.cmdDelete.defaultvalue("")
+gui.Form1.cmdDelete.controlgroup(0)
+gui.Form1.cmdClear.create(button)
+gui.Form1.cmdClear.caption("Clear/New")
+gui.Form1.cmdClear.visible(True)
+gui.Form1.cmdClear.size(915,375)
+gui.Form1.cmdClear.zorder(0)
+gui.Form1.cmdClear.position(2455,1500)
+gui.Form1.cmdClear.enabled(True)
+gui.Form1.cmdClear.fontname("Arial")
+gui.Form1.cmdClear.fontsize(8)
+gui.Form1.cmdClear.event(click,cmdclear_click)
+gui.Form1.cmdClear.defaultvalue("")
+gui.Form1.cmdClear.controlgroup(0)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'coded by: SFF
+'12/31/2014
+'Employee Pts Data Entry Program.
+
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.ODBC.Connection!conX.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,72000)
+F.Intrinsic.Control.CallSub(Loadscreen)
+Gui.Form1..Show
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4056_EMP_PTS_ENTRY.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Main.End
+
+program.sub.txtemp_lostfocus.start
+F.Intrinsic.Control.SetErrorHandler("txtemp_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSql.Declare(String)
+
+F.Intrinsic.String.LPad(V.Screen.Form1!txtEmp.Text,"0",5,V.Local.sRet)
+'load employee info if valid employee number else call employee browser if invalid employee
+F.Intrinsic.String.Build("select Name from v_employee_mstr where employee = '{0}'",V.Local.sRet,V.Local.sSql)
+F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+	Gui.Form1.txtEmp.Text(V.Local.sRet)
+	Gui.Form1.txtEmpName.Text(V.ODBC.conX!rst.FieldVal!Name)
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.Else
+	F.ODBC.conX!rst.Close
+	Gui.Form1.txtEmp.Text("")
+	Gui.Form1.txtEmpName.Text("")
+	F.Intrinsic.UI.Msgbox("Invalid Employee #")
+'	F.Intrinsic.Control.CallSub(Cmdbrwsemp_click)
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.CallSub(Loadempoccs)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtemp_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4056_EMP_PTS_ENTRY.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.txtemp_lostfocus.end
+
+program.sub.ddloccid_lostfocus.start
+F.Intrinsic.Control.SetErrorHandler("ddloccid_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.CallSub(Loadselection)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("ddloccid_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4056_EMP_PTS_ENTRY.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.ddloccid_lostfocus.end
+
+program.sub.cmdsave_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdsave_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sDate.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.String.Format(V.Screen.Form1!ddlDateOcc.Value,"YYYY-MM-DD",V.Local.sDate)
+
+'check to make sure all selections have been made to save a valid occurrence
+V.Local.sRet.Set(V.Screen.Form1!txtEmp.Text)
+F.Intrinsic.Control.if(V.Local.sRet.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("Must Select Employee","Select Employee")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.ElseIf(V.Screen.Form1!ddlPts.Text,=,"")
+	F.Intrinsic.UI.Msgbox("Must Assign a Point Value","Points")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.ElseIf(V.Screen.Form1!ddlDesc.Text,=,"")
+	F.Intrinsic.UI.Msgbox("Must Assign Description","Description")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'if existing occurrence then update that occurrence ID else create new occurrence id
+F.Intrinsic.Control.If(V.Screen.Form1!ddlOccID.Text,=,"")
+	F.ODBC.Connection!conX.OpenRecordsetRW("rst","Select Employee,Name_Employee,Occ_Description,Points,Date_Occ from GCG_4056_PTS")
+	F.ODBC.conX!rst.AddNew
+	F.ODBC.conX!rst.Set!Employee(V.Screen.Form1!txtEmp.Text)
+	F.ODBC.conX!rst.Set!Name_Employee(V.Screen.Form1!txtEmpName.Text)
+	F.ODBC.conX!rst.Set!Points(V.Screen.Form1!ddlPts.Text)
+	F.ODBC.conX!rst.Set!Occ_Description(V.Screen.Form1!ddlDesc.Text)
+	F.ODBC.conX!rst.Set!Date_Occ(V.local.sDate)
+	F.ODBC.conX!rst.Update
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("Select Employee,Name_Employee,Occ_Description,Points,Date_Occ from GCG_4056_PTS where Occ_ID = '{0}'",V.Screen.Form1!ddlOccID.Text,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRW("rst",V.Local.sSql)
+	F.ODBC.conX!rst.Set!Points(V.Screen.Form1!ddlPts.Text)
+	F.ODBC.conX!rst.Set!Date_Occ(V.Local.sDate)
+	F.ODBC.conX!rst.Set!Occ_Description(V.Screen.Form1!ddlDesc.Text)
+	F.ODBC.conX!rst.Update
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.EndIf
+
+Gui.Form1.ddlDateOcc.Value(V.Ambient.Date)
+Gui.Form1.ddlDesc.Text("")
+Gui.Form1.ddlOccID.ClearItems
+Gui.Form1.ddlPts.Text("")
+
+F.Intrinsic.Control.CallSub(Loadempoccs)
+Gui.Form1.ddlOccID.SetFocus
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdsave_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4056_EMP_PTS_ENTRY.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdsave_click.end
+
+program.sub.cmddelete_click.start
+F.Intrinsic.Control.SetErrorHandler("cmddelete_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+
+'delete currently selected occurrence
+F.Intrinsic.String.Build("Delete from GCG_4056_PTS where OCC_ID = '{0}'",V.Screen.Form1!ddlOccID.Text,V.Local.sSql)
+F.ODBC.Connection!conX.Execute(V.Local.sSql)
+Gui.Form1.ddlDateOcc.Value(V.Ambient.Date)
+Gui.Form1.ddlDesc.Text("")
+Gui.Form1.ddlOccID.ClearItems
+Gui.Form1.ddlPts.Text("")
+F.Intrinsic.Control.CallSub(Loadempoccs)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmddelete_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4056_EMP_PTS_ENTRY.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmddelete_click.end
+
+program.sub.form1_unload.start
+F.Intrinsic.Control.End
+
+program.sub.form1_unload.end
+
+Program.Sub.LoadScreen.Start
+F.Intrinsic.Control.SetErrorHandler("LoadScreen_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'load drop downs with set values they will use.
+Gui.Form1.ddlDesc.ClearItems
+Gui.Form1.ddlOccID.ClearItems
+Gui.Form1.ddlPts.ClearItems
+Gui.Form1.ddlDateOcc.Value(V.Ambient.Date)
+
+Gui.Form1.ddlDesc.AddItem("Late")
+Gui.Form1.ddlDesc.AddItem("Early Out")
+Gui.Form1.ddlDesc.AddItem("Failure to Clock")
+Gui.Form1.ddlDesc.AddItem("Forgot Badge")
+Gui.Form1.ddlDesc.AddItem("Failure to Call In")
+
+Gui.Form1.ddlPts.AddItem("0.25")
+Gui.Form1.ddlPts.AddItem("0.5")
+Gui.Form1.ddlPts.AddItem("0.75")
+Gui.Form1.ddlPts.AddItem("1")
+
+Gui.Form1.txtEmp.SetFocus
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LoadScreen_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4056_EMP_PTS_ENTRY.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.LoadScreen.End
+
+Program.Sub.LoadSelection.Start
+F.Intrinsic.Control.SetErrorHandler("LoadSelection_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sRet.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.iRet.Declare(Float)
+V.Local.bRet.Declare(Boolean)
+
+'load occurrence informationfor any existing occ ID's that are selected for that employee
+F.Intrinsic.Control.If(V.Screen.Form1!ddlOccID.Text,<>,"")
+
+	F.Intrinsic.String.Build("select Occ_Description, Points, Date_Occ from GCG_4056_PTS where Occ_ID = {0}",V.Screen.Form1!ddlOccID.Text,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+		Gui.Form1.ddlDesc.Text(V.ODBC.conX!rst.FieldValTrim!Occ_Description)
+		F.Intrinsic.Math.ConvertToFloat(V.ODBC.conX!rst.FieldValTrim!Points,V.Local.iRet)
+		F.Intrinsic.String.ConvertToString(V.Local.iRet,V.Local.sRet)
+	'	F.Intrinsic.String.IsInString(V.Local.sRet,".",True,V.Local.bRet)
+	'	F.Intrinsic.Control.If(V.Local.bRet,=,False)
+	'		F.Intrinsic.String.Concat(V.Local.sRet,".0",V.Local.sRet)
+	'	F.Intrinsic.Control.EndIf
+		Gui.Form1.ddlPts.Text(V.Local.sRet)
+		Gui.Form1.ddlDateOcc.Value(V.ODBC.conX!rst.FieldVal!Date_Occ)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.Else
+	Gui.Form1.ddlDateOcc.Value(V.Ambient.Date)
+	Gui.Form1.ddlDesc.Text("")
+	Gui.Form1.ddlPts.Text("")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LoadSelection_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4056_EMP_PTS_ENTRY.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.LoadSelection.End
+
+program.sub.cmdclear_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdclear_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'clear screen for new selection
+Gui.Form1.ddlOccID.ClearItems
+Gui.Form1.txtEmp.Text("")
+Gui.Form1.txtEmpName.Text("")
+
+F.Intrinsic.Control.CallSub(Loadscreen)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdclear_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4056_EMP_PTS_ENTRY.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdclear_click.end
+
+Program.Sub.cmdbrwsemp_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdbrwsemp_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sRet.Declare(String)
+
+'common employee browser
+F.Intrinsic.UI.Browser(50,"",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.Form1.txtEmp.Text(V.Local.sRet(0))
+	Gui.Form1.txtEmpName.Text(V.Local.sRet(1))
+	F.Intrinsic.Control.CallSub(Loadempoccs)
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdbrwsemp_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4056_EMP_PTS_ENTRY.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdbrwsemp_click.End
+
+Program.Sub.LoadEmpOccs.Start
+F.Intrinsic.Control.SetErrorHandler("LoadEmpOccs_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+'load employee occurrences existing for current employee selected
+V.Local.sSql.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.i.Declare(Float)
+
+Gui.Form1.ddlOccID.ClearItems
+Gui.Form1.ddlDateOcc.Value(V.Ambient.Date)
+Gui.Form1.ddlDesc.Text("")
+Gui.Form1.ddlPts.Text("")
+
+F.Intrinsic.String.Build("select Occ_ID from GCG_4056_PTS where Employee = '{0}'",V.Screen.Form1!txtEmp.Text,V.Local.sSql)
+F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+	F.Intrinsic.Control.DoUntil(V.ODBC.conX!rst.EOF,=,True)
+		Gui.Form1.ddlOccID.AddItem(V.ODBC.conX!rst.FieldVal!Occ_ID)
+	F.ODBC.conX!rst.MoveNext
+	F.Intrinsic.Control.Loop
+F.Intrinsic.Control.EndIf
+Gui.Form1.ddlOccID.AddItem("")
+F.ODBC.conX!rst.Close
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LoadEmpOccs_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4056_EMP_PTS_ENTRY.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.LoadEmpOccs.End
+
+Program.Sub.Comments.Start
+${$0$}$Test Script$}$SFF$}$7/30/2014 10:28:13 AM
+Program.Sub.Comments.End
+
